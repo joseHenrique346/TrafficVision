@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficVision", "TrafficVision\TrafficVision.csproj", "{BA6BB22B-27F3-4AF5-9864-16EC7E51E62F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficVision.Api", "TrafficVision\TrafficVision.Api.csproj", "{BA6BB22B-27F3-4AF5-9864-16EC7E51E62F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficVision.Domain", "TrafficVision.Domain\TrafficVision.Domain.csproj", "{9D4D001D-5DE0-475A-A05C-286B5AB2C3F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficVision.Application", "TrafficVision.Application\TrafficVision.Application.csproj", "{40D2AC76-596C-449A-8774-534D23BEC818}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficVision.Infrastructure.Data", "TrafficVision.Infrastructure.Data\TrafficVision.Infrastructure.Data.csproj", "{5EE1D674-3FBD-4D7D-A83B-1FF5967D97E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{BA6BB22B-27F3-4AF5-9864-16EC7E51E62F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA6BB22B-27F3-4AF5-9864-16EC7E51E62F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA6BB22B-27F3-4AF5-9864-16EC7E51E62F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4D001D-5DE0-475A-A05C-286B5AB2C3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4D001D-5DE0-475A-A05C-286B5AB2C3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D4D001D-5DE0-475A-A05C-286B5AB2C3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D4D001D-5DE0-475A-A05C-286B5AB2C3F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40D2AC76-596C-449A-8774-534D23BEC818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D2AC76-596C-449A-8774-534D23BEC818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D2AC76-596C-449A-8774-534D23BEC818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D2AC76-596C-449A-8774-534D23BEC818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EE1D674-3FBD-4D7D-A83B-1FF5967D97E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE1D674-3FBD-4D7D-A83B-1FF5967D97E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE1D674-3FBD-4D7D-A83B-1FF5967D97E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE1D674-3FBD-4D7D-A83B-1FF5967D97E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
