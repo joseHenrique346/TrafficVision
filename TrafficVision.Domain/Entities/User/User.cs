@@ -18,4 +18,21 @@ public class User : BaseEntity
         UserEmail = userEmail;
         UserPassword = userPassword;
     }
+
+    public static User Create(string name, EnumUserRole userRole, string userEmail, string userPassword)
+    {
+        return new User(name, userRole, UserEmail.Create(userEmail), UserPassword.Create(userPassword));
+    }
+
+    public void Update(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword) 
+    {
+        BaseValidate.NullOrWhiteSpace(name, nameof(User));
+
+        Name = name;
+        UserRole = userRole;
+        UserEmail = userEmail;
+        UserPassword = userPassword;
+
+        SetChangedDate();
+    }
 }
