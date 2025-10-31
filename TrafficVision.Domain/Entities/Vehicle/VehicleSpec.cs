@@ -5,6 +5,7 @@ namespace TrafficVision.Domain.Entities.Vehicle;
 
 public sealed class VehicleSpec
 {
+    #region Properties
     public string Plate { get; private set; }
     public string Renavam { get; private set; }
     public string Chassis { get; private set; }
@@ -14,7 +15,9 @@ public sealed class VehicleSpec
     public EnumTypeFuelVehicle EnumTypeFuelVehicle { get; private set; }
     public VehicleRestriction VehicleRestriction { get; private set; }
     public VehicleOwner Owner { get; private set; }
+    #endregion
 
+    #region Constructors
     public VehicleSpec() { }
 
     public VehicleSpec(string plate, string renavam, string chassis, string municipality, string state, EnumDataVehicleCondition dataVehicleCondition, EnumTypeFuelVehicle enumTypeFuelVehicle, VehicleRestriction vehicleRestriction, VehicleOwner owner)
@@ -41,7 +44,9 @@ public sealed class VehicleSpec
         VehicleRestriction = validatedRestriction;
         Owner = validatedOwner;
     }
+    #endregion
 
+    #region Create/Update
     public static VehicleSpec Create(string plate, string renavam, string chassis, string municipality, string state, EnumDataVehicleCondition dataVehicleCondition, EnumTypeFuelVehicle enumTypeFuelVehicle, VehicleRestriction vehicleRestriction, VehicleOwner owner)
     {
         return new VehicleSpec(plate, renavam, chassis, municipality, state, dataVehicleCondition, enumTypeFuelVehicle, vehicleRestriction, owner);
@@ -71,4 +76,5 @@ public sealed class VehicleSpec
         VehicleRestriction = validatedRestriction;
         Owner = validatedOwner;
     }
+    #endregion
 }

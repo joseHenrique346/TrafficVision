@@ -4,10 +4,15 @@ namespace TrafficVision.Domain.Entities.Vehicle;
 
 public sealed class VehicleRestriction
 {
+    #region Properties
     public EnumTheftVehicleCondition TheftVehicleCondition { get; private set; }
     public bool Wrecked { get; private set; }
     public bool JudicialRestriction { get; private set; }
     public bool Auction { get; private set; }
+    #endregion
+
+    #region Constructors
+    public VehicleRestriction() { }
 
     public VehicleRestriction(EnumTheftVehicleCondition theftVehicleCondition, bool wrecked, bool judicialRestriction, bool auction)
     {
@@ -22,7 +27,9 @@ public sealed class VehicleRestriction
         JudicialRestriction = validatedJudicialRestriction;
         Auction = validatedAuction;
     }
-    
+    #endregion
+
+    #region Create/Update
     public static VehicleRestriction Create(EnumTheftVehicleCondition enumTheftVehicleCondition, bool wrecked, bool judicialRestriction, bool auction)
     {
         return new VehicleRestriction(enumTheftVehicleCondition, wrecked, judicialRestriction, auction);
@@ -40,4 +47,5 @@ public sealed class VehicleRestriction
         JudicialRestriction = validatedJudicialRestriction;
         Auction = validatedAuction;
     }
+    #endregion
 }

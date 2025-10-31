@@ -4,10 +4,13 @@ namespace TrafficVision.Domain.Entities.Vehicle;
 
 public sealed class VehicleOwner
 {
+    #region Properties
     public string Name { get; private set; }
     public string CpfCnpj { get; private set; }
     public string Cnh { get; private set; }
+    #endregion
 
+    #region Constructors
     public VehicleOwner() { }
 
     public VehicleOwner(string name, string cpfCnpj, string cnh)
@@ -20,7 +23,9 @@ public sealed class VehicleOwner
         CpfCnpj = cpfCnpj;
         Cnh = cnh;
     }
+    #endregion
 
+    #region Create/Update
     public static VehicleOwner Create(string name, string cpfCnpj, string cnh)
     {
         return new VehicleOwner(name, cpfCnpj, cnh);
@@ -36,4 +41,5 @@ public sealed class VehicleOwner
         CpfCnpj = cpfCnpj;
         Cnh = cnh;
     }
+    #endregion
 }

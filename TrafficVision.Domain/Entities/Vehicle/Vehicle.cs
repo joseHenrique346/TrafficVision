@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-using System.Reflection;
-using TrafficVision.Domain.Entities.Base;
+﻿using TrafficVision.Domain.Entities.Base;
 
 namespace TrafficVision.Domain.Entities.Vehicle;
 
