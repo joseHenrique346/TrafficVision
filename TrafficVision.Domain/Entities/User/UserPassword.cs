@@ -2,9 +2,14 @@
 
 namespace TrafficVision.Domain.Entities.User;
 
-public class UserPassword
+public sealed class UserPassword
 {
+    #region Property
     public string Value { get; private set; }
+    #endregion
+
+    #region Constructors
+    public UserPassword() { }
 
     public UserPassword(string value)
     {
@@ -25,7 +30,9 @@ public class UserPassword
 
         Value = value;
     }
+    #endregion
 
+    #region Create/Update
     public static UserPassword Create(string value)
     {
         return new UserPassword(value);
@@ -50,4 +57,5 @@ public class UserPassword
 
         Value = value;
     }
+    #endregion
 }

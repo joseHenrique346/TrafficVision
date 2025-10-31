@@ -20,4 +20,9 @@ public static class BaseValidate
     {
         if (!Regex.IsMatch(value, regex)) { throw new ArgumentException(message, propertyName); }
     }
+
+    public static void AnnualPeriod(int year, int? minimunPeriodYear = null, bool allowFutureYears = false)
+    {
+        
+    }
 }

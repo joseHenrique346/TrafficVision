@@ -3,9 +3,14 @@ using TrafficVision.Domain.Entities.Base;
 
 namespace TrafficVision.Domain.Entities.User;
 
-public class UserEmail
+public sealed class UserEmail
 {
+    #region Property
     public string Value { get; private set; }
+    #endregion
+
+    #region Constructors
+    public UserEmail() { }
 
     public UserEmail(string value)
     {
@@ -26,7 +31,9 @@ public class UserEmail
 
         Value = value;
     }
+    #endregion
 
+    #region Create/Update
     public static UserEmail Create(string value)
     {
         return new UserEmail(value);
@@ -51,4 +58,5 @@ public class UserEmail
 
         Value = value;
     }
+    #endregion
 }

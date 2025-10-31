@@ -2,12 +2,17 @@
 
 namespace TrafficVision.Domain.Entities.User;
 
-public class User : BaseEntity
+public sealed class User : BaseEntity
 {
+    #region Properties
     public string Name { get; private set; }
     public EnumUserRole UserRole { get; private set; }
     public UserEmail UserEmail { get; private set; }
     public UserPassword UserPassword { get; private set; }
+    #endregion
+
+    #region Constructors
+    public User() { }
 
     public User(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword)
     {
@@ -18,13 +23,15 @@ public class User : BaseEntity
         UserEmail = userEmail;
         UserPassword = userPassword;
     }
+    #endregion
 
+    #region Create/Update
     public static User Create(string name, EnumUserRole userRole, string userEmail, string userPassword)
     {
         return new User(name, userRole, UserEmail.Create(userEmail), UserPassword.Create(userPassword));
     }
 
-    public void Update(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword) 
+    public void Update(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword)
     {
         BaseValidate.NullOrWhiteSpace(name, nameof(User));
 
@@ -35,4 +42,5 @@ public class User : BaseEntity
 
         SetChangedDate();
     }
+    #endregion
 }
