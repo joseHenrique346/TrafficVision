@@ -1,8 +1,6 @@
-﻿using TrafficVision.Domain.Entities.Base;
+﻿namespace TrafficVision.Domain.Entities;
 
-namespace TrafficVision.Domain.Entities;
-
-public sealed class DynamicReport
+public sealed class ReportRegistration
 {
     #region Properties
     public long UserId { get; private set; }
@@ -12,9 +10,9 @@ public sealed class DynamicReport
     #endregion
 
     #region Constructors
-    public DynamicReport() { }
+    public ReportRegistration() { }
 
-    public DynamicReport(long userId, long vehicleId, User? user, Vehicle? vehicle)
+    public ReportRegistration(long userId, long vehicleId, User? user, Vehicle? vehicle)
     {
         UserId = userId;
         VehicleId = vehicleId;
@@ -23,11 +21,11 @@ public sealed class DynamicReport
     }
     #endregion
 
-    public static DynamicReport Create(long userId, long vehicleId)
+    public static ReportRegistration Create(long userId, long vehicleId)
     {
         var validatedUserId = userId != null ? userId : 0;
         var validatedVehicleId = vehicleId != null ? vehicleId : 0;
 
-        return new DynamicReport(userId, vehicleId, default, default);
+        return new ReportRegistration(userId, vehicleId, default, default);
     }
 }
