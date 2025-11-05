@@ -1,7 +1,6 @@
 ﻿using TrafficVision.Domain.Entities.Base;
-using TrafficVision.Domain.Entities.Vehicle.Enum;
 
-namespace TrafficVision.Domain.Entities.Vehicle;
+namespace TrafficVision.Domain.Entities;
 
 public sealed class VehicleSpec
 {

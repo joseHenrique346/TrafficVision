@@ -1,6 +1,6 @@
 ﻿using TrafficVision.Domain.Entities.Base;
 
-namespace TrafficVision.Domain.Entities.User;
+namespace TrafficVision.Domain.Entities;
 
 public sealed class User : BaseEntity
 {

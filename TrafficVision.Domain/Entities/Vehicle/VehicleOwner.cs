@@ -1,6 +1,6 @@
 ﻿using TrafficVision.Domain.Entities.Base;
 
-namespace TrafficVision.Domain.Entities.Vehicle;
+namespace TrafficVision.Domain.Entities;
 
 public sealed class VehicleOwner
 {

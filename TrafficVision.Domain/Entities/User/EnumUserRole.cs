@@ -1,4 +1,4 @@
-﻿namespace TrafficVision.Domain.Entities.User;
+﻿namespace TrafficVision.Domain.Entities;
 
 public enum EnumUserRole
 {

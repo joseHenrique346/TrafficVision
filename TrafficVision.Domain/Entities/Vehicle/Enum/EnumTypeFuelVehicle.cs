@@ -1,4 +1,4 @@
-﻿namespace TrafficVision.Domain.Entities.Vehicle.Enum;
+﻿namespace TrafficVision.Domain.Entities;
 
 public enum EnumTypeFuelVehicle
 {
