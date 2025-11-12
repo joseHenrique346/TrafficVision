@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using TrafficVision.Application.Result;
+using TrafficVision.Domain.Entities;
 
-namespace TrafficVision.Application.Features.Commands.ReportRegistration.Create
+namespace TrafficVision.Application.Features.Commands;
+
+public sealed class CreateReportRegistrationCommandHandler : IRequestHandler<CreateReportRegistrationCommand, Result<ReportRegistration>>
 {
-    internal class CreateReportRegistrationCommandHandler
+    public Task<Result<ReportRegistration>> Handle(CreateReportRegistrationCommand request, CancellationToken cancellationToken)
     {
+        throw new NotImplementedException();
     }
 }

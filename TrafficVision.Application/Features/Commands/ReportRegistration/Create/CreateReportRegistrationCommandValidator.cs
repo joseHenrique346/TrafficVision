@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
 
-namespace TrafficVision.Application.Features.Commands.ReportRegistration.Create
+namespace TrafficVision.Application.Features.Commands;
+
+public class CreateReportRegistrationCommandValidator : AbstractValidator<CreateReportRegistrationCommand>
 {
-    internal class CreateReportRegistrationCommandValidator
+    public CreateReportRegistrationCommandValidator()
     {
+        RuleFor(report => report.UserId)
+            .NotNull().WithMessage("O usuário precisa ser informado.");
+
+        RuleFor(report => report.Plate)
+            .NotEmpty().WithMessage("O campo da placa do carro não pode ser vazio.")
+            .NotNull().WithMessage("A placa do carro precisa ser informada.");
     }
 }
