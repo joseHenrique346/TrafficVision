@@ -2,7 +2,7 @@
 
 namespace TrafficVision.Infrastructure.Data.Persistence.Entity;
 
-public sealed class User : BaseEntity
+public sealed class UserEntity : BaseEntity
 {
     #region Properties
     public string Name { get; private set; }
@@ -12,11 +12,11 @@ public sealed class User : BaseEntity
     #endregion
 
     #region Constructors
-    public User() { }
+    public UserEntity() { }
 
-    public User(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword)
+    public UserEntity(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword)
     {
-        BaseValidate.NullOrWhiteSpace(name, nameof(User));
+        BaseValidate.NullOrWhiteSpace(name, nameof(UserEntity));
 
         Name = name;
         UserRole = userRole;
@@ -26,14 +26,14 @@ public sealed class User : BaseEntity
     #endregion
 
     #region Create/Update
-    public static User Create(string name, EnumUserRole userRole, string userEmail, string userPassword)
+    public static UserEntity Create(string name, EnumUserRole userRole, string userEmail, string userPassword)
     {
-        return new User(name, userRole, UserEmail.Create(userEmail), UserPassword.Create(userPassword));
+        return new UserEntity(name, userRole, UserEmail.Create(userEmail), UserPassword.Create(userPassword));
     }
 
     public void Update(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword)
     {
-        BaseValidate.NullOrWhiteSpace(name, nameof(User));
+        BaseValidate.NullOrWhiteSpace(name, nameof(UserEntity));
 
         Name = name;
         UserRole = userRole;

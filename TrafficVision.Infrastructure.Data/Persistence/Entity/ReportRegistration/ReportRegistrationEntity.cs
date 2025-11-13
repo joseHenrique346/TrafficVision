@@ -1,4 +1,6 @@
-﻿namespace TrafficVision.Infrastructure.Data.Persistence;
+﻿using TrafficVision.Infrastructure.Data.Persistence.Entity;
+
+namespace TrafficVision.Infrastructure.Data.Persistence;
 
 public sealed class ReportRegistrationEntity : BaseEntity
 {
