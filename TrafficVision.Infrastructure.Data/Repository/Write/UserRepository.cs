@@ -19,6 +19,31 @@ public class UserRepository : IReportRegistrationRepository
         //await _context.FindAsync(id);
     }
 
+    public async Task AddAsync(User user)
+    {
+        throw new NotImplementedException();
+        //await _context.Users.AddAsync(user);
+        //await _context.SaveChangesAsync();
+    }
+
+    public async Task UpdateAsync(User user)
+    {
+        throw new NotImplementedException();
+        //_context.Users.Update(user);
+        //await _context.SaveChangesAsync();
+    }
+
+    public async Task DeleteAsync(long id)
+    {
+        throw new NotImplementedException();
+        //var user = await _context.Users.FindAsync(id);
+        //if (user != null)
+        //{
+        //    _context.Users.Remove(user);
+        //    await _context.SaveChangesAsync();
+        //}
+    }
+
     public async Task AddAsync(ReportRegistration report)
     {
         throw new NotImplementedException();

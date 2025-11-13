@@ -24,23 +24,4 @@ public sealed class UserEntity : BaseEntity
         UserPassword = userPassword;
     }
     #endregion
-
-    #region Create/Update
-    public static UserEntity Create(string name, EnumUserRole userRole, string userEmail, string userPassword)
-    {
-        return new UserEntity(name, userRole, UserEmail.Create(userEmail), UserPassword.Create(userPassword));
-    }
-
-    public void Update(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword)
-    {
-        BaseValidate.NullOrWhiteSpace(name, nameof(UserEntity));
-
-        Name = name;
-        UserRole = userRole;
-        UserEmail = userEmail;
-        UserPassword = userPassword;
-
-        SetChangedDate();
-    }
-    #endregion
 }
