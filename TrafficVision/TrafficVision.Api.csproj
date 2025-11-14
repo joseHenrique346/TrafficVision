@@ -16,7 +16,8 @@
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <ProjectReference Include="..\TrafficVision.Application\TrafficVision.Application.csproj" />
-	<Protobuf Include="Protos\report.proto" GrpcServices="Client" />
+    <ProjectReference Include="..\TrafficVision.Infrastructure.Data\TrafficVision.Infrastructure.Data.csproj" />
+	  <Protobuf Include="Protos\report.proto" GrpcServices="Client" />
   </ItemGroup>
 
 </Project>
