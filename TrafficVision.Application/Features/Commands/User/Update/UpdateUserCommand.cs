@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TrafficVision.Domain.Entities;
 
-namespace TrafficVision.Application.Features.Commands.User.Update
-{
-    internal class UpdateUserCommand
-    {
-    }
-}
+namespace TrafficVision.Application.Features.Commands.User.Update;
+public record UpdateUserCommand(long UserId, string UserName, EnumUserRole UserRole, string UserEmail, string UserPassword) { }
