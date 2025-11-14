@@ -1,6 +1,4 @@
-﻿namespace TrafficVision.Domain.Entities;
-
-public enum EnumTheftVehicleCondition
+﻿public enum EnumTheftVehicleCondition
 {
     Roubado = 1,
     Furtado = 2,

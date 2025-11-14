@@ -1,6 +1,4 @@
-﻿namespace TrafficVision.Domain.Entities;
-
-public enum EnumTypeFuelVehicle
+﻿public enum EnumTypeFuelVehicle
 {
     Diesel = 1,
     Gasolina = 2,

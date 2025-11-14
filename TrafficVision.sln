@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficVision.Api", "TrafficVision\TrafficVision.Api.csproj", "{BA6BB22B-27F3-4AF5-9864-16EC7E51E62F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{40D2AC76-596C-449A-8774-534D23BEC818} = {40D2AC76-596C-449A-8774-534D23BEC818}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficVision.Domain", "TrafficVision.Domain\TrafficVision.Domain.csproj", "{9D4D001D-5DE0-475A-A05C-286B5AB2C3F0}"
 EndProject
