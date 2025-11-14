@@ -4,7 +4,7 @@ using TrafficVision.Infrastructure.Data.Persistence;
 
 namespace TrafficVision.Infrastructure.Data.Repository;
 
-public class UserRepository : IReportRegistrationRepository
+public class UserRepository : IUserRepository
 {
     private readonly AppDbContext _context;
 
@@ -13,7 +13,7 @@ public class UserRepository : IReportRegistrationRepository
         _context = context;
     }
 
-    public async Task<ReportRegistration> GetByIdAsync(long id)
+    public async Task<User> GetByIdAsync(long id)
     {
         throw new NotImplementedException();
         //await _context.FindAsync(id);
@@ -42,12 +42,5 @@ public class UserRepository : IReportRegistrationRepository
         //    _context.Users.Remove(user);
         //    await _context.SaveChangesAsync();
         //}
-    }
-
-    public async Task AddAsync(ReportRegistration report)
-    {
-        throw new NotImplementedException();
-        //await _context.AddAsync(report);
-        //await _context.SaveChangesAsync();
     }
 }

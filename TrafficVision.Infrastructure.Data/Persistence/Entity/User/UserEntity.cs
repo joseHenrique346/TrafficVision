@@ -1,6 +1,4 @@
-﻿using TrafficVision.Domain.Entities.Base;
-
-namespace TrafficVision.Infrastructure.Data.Persistence.Entity;
+﻿namespace TrafficVision.Infrastructure.Data.Persistence.Entity;
 
 public sealed class UserEntity : BaseEntity
 {
@@ -16,8 +14,6 @@ public sealed class UserEntity : BaseEntity
 
     public UserEntity(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword)
     {
-        BaseValidate.NullOrWhiteSpace(name, nameof(UserEntity));
-
         Name = name;
         UserRole = userRole;
         UserEmail = userEmail;
