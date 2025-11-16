@@ -1,6 +1,8 @@
-﻿namespace TrafficVision.Domain.Entities;
+﻿using TrafficVision.Domain.Entities.Base;
 
-public sealed class ReportRegistration
+namespace TrafficVision.Domain.Entities;
+
+public sealed class ReportRegistration : BaseEntity
 {
     #region Properties
     public long UserId { get; private set; }
