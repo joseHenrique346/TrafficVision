@@ -20,36 +20,41 @@ namespace TrafficVision.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<List<User>>> GetAllAsync()
         {
-            var users = await _readRepository.GetAll();
-            return Ok(users);
+            throw new NotImplementedException();
+            //var users = await _readRepository.GetAll();
+            //return Ok(users);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetByIdAsync(long id)
         {
-            var user = await _readRepository.GetByIdAsync(id);
-            return Ok(user);
+            throw new NotImplementedException();
+            //var user = await _readRepository.GetByIdAsync(id);
+            //return Ok(user);
         }
 
         [HttpPost]
         public async Task<ActionResult> CreateAsync([FromBody] User user)
         {
-            await _writeRepository.AddAsync(user);
-            return Ok();
+            throw new NotImplementedException();
+            //await _writeRepository.AddAsync(user);
+            //return Ok();
         }
 
         [HttpPut]
         public async Task<ActionResult> UpdateAsync([FromBody] User user)
         {
-            await _writeRepository.UpdateAsync(user);
-            return Ok();
+            throw new NotImplementedException();
+            //await _writeRepository.UpdateAsync(user);
+            //return Ok();
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteAsync(long id)
         {
-            await _writeRepository.DeleteAsync(id);
-            return Ok();
+            throw new NotImplementedException();
+            //await _writeRepository.DeleteAsync(id);
+            //return Ok();
         }
     }
 }
