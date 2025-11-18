@@ -30,9 +30,6 @@ public sealed class VehicleSpec
         EnumDataVehicleCondition validatedEnumDataVehicleCondition = dataVehicleCondition != null ? dataVehicleCondition : throw new ArgumentException("O dado do carro precisa ser válido");
         EnumTypeFuelVehicle validatedEnumTypeFuelVehicle = enumTypeFuelVehicle != null ? enumTypeFuelVehicle : throw new ArgumentException("O dado do carro precisa ser válido");
 
-        VehicleRestriction validatedRestriction = VehicleRestriction.Create(vehicleRestriction.TheftVehicleCondition, vehicleRestriction.Wrecked, vehicleRestriction.JudicialRestriction, vehicleRestriction.Auction);
-        VehicleOwner validatedOwner = VehicleOwner.Create(owner.Name, owner.CpfCnpj, owner.Cnh);
-
         Plate = plate;
         Renavam = renavam;
         Chassis = chassis;
@@ -40,8 +37,8 @@ public sealed class VehicleSpec
         State = state;
         DataVehicleCondition = validatedEnumDataVehicleCondition;
         EnumTypeFuelVehicle = validatedEnumTypeFuelVehicle;
-        VehicleRestriction = validatedRestriction;
-        Owner = validatedOwner;
+        VehicleRestriction = vehicleRestriction;
+        Owner = owner;
     }
     #endregion
 
@@ -62,9 +59,6 @@ public sealed class VehicleSpec
         EnumDataVehicleCondition validatedEnumDataVehicleCondition = dataVehicleCondition != null ? dataVehicleCondition : throw new ArgumentException("O dado do carro precisa ser válido");
         EnumTypeFuelVehicle validatedEnumTypeFuelVehicle = enumTypeFuelVehicle != null ? enumTypeFuelVehicle : throw new ArgumentException("O dado do carro precisa ser válido");
 
-        VehicleRestriction validatedRestriction = VehicleRestriction.Create(vehicleRestriction.TheftVehicleCondition, vehicleRestriction.Wrecked, vehicleRestriction.JudicialRestriction, vehicleRestriction.Auction);
-        VehicleOwner validatedOwner = VehicleOwner.Create(owner.Name, owner.CpfCnpj, owner.Cnh);
-
         Plate = plate;
         Renavam = renavam;
         Chassis = chassis;
@@ -72,8 +66,8 @@ public sealed class VehicleSpec
         State = state;
         DataVehicleCondition = validatedEnumDataVehicleCondition;
         EnumTypeFuelVehicle = validatedEnumTypeFuelVehicle;
-        VehicleRestriction = validatedRestriction;
-        Owner = validatedOwner;
+        VehicleRestriction = vehicleRestriction;
+        Owner = owner;
     }
     #endregion
 }

@@ -23,13 +23,11 @@ public sealed class Vehicle : BaseEntity
         BaseValidate.NullOrWhiteSpace(brand, $"{Brand}");
         BaseValidate.NullOrWhiteSpace(color, $"{Color}");
 
-        VehicleSpec specs = VehicleSpec.Create(vehicleSpec.Plate, vehicleSpec.Renavam, vehicleSpec.Chassis, vehicleSpec.Municipality, vehicleSpec.State, vehicleSpec.DataVehicleCondition, vehicleSpec.EnumTypeFuelVehicle, vehicleSpec.VehicleRestriction, vehicleSpec.Owner);
-
         Model = model;
         Year = year;
         Brand = brand;
         Color = color;
-        VehicleSpec = specs;
+        VehicleSpec = vehicleSpec;
     }
     #endregion
 

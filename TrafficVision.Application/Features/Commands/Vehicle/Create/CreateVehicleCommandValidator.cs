@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrafficVision.Application.Features.Commands.Vehicle.Create
+namespace TrafficVision.Application.Features.Commands;
+
+internal class CreateVehicleCommandValidator
 {
-    internal class CreateVehicleCommandValidator
-    {
-    }
 }

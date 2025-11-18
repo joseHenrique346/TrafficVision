@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using TrafficVision.Application.Features.Commands;
 using TrafficVision.Domain.Entities;
-using TrafficVision.Domain.Interfaces.Repository;
 
 namespace TrafficVision.Api.Controllers
 {
@@ -8,15 +9,11 @@ namespace TrafficVision.Api.Controllers
     [ApiController]
     public class ReportRegistrationController : ControllerBase
     {
-        private readonly IReadReportRegistrationRepository _readRepository;
-        private readonly IWriteReportRegistrationRepository _writeRepository;
+        private readonly IMediator _mediator;
 
-        public ReportRegistrationController(
-            IReadReportRegistrationRepository readRepository,
-            IWriteReportRegistrationRepository writeRepository)
+        public ReportRegistrationController(IMediator mediator)
         {
-            _readRepository = readRepository;
-            _writeRepository = writeRepository;
+            _mediator = mediator;
         }
 
         [HttpGet]
@@ -36,11 +33,14 @@ namespace TrafficVision.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateAsync([FromBody] ReportRegistration entity)
+        public async Task<IActionResult> Create([FromBody] CreateReportRegistrationCommand command)
         {
-            throw new NotImplementedException();
-            //await _writeRepository.AddAsync(entity);
-            //return Ok();
+            var result = await _mediator.Send(command);
+
+            if (!result.IsSuccess)
+                return BadRequest(result.ListMessageErrors);
+
+            return Ok(result.Content);
         }
 
         [HttpPut]

@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using TrafficVision.Application.Result;
 using TrafficVision.Domain.Entities;
 
 namespace TrafficVision.Application.Features.Commands;

@@ -1,6 +1,4 @@
-﻿using TrafficVision.Domain.Entities;
-
-namespace TrafficVision.Application.DTOs;
+﻿namespace TrafficVision.Application.DTOs;
 
 public class VehicleDTO
 {
