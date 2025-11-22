@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TrafficVision.Domain.Entities;
+using TrafficVision.Domain.Interfaces;
 using TrafficVision.Domain.Interfaces.Repository;
 using TrafficVision.Infrastructure.Data.Repository;
 
@@ -21,6 +21,8 @@ public static class DependencyInjection
         services.AddScoped<IReadUserRepository, ReadUserRepository>();
 
         services.AddScoped<IWriteVehicleRepository, WriteVehicleRepository>();
+
+        services.AddScoped<IPlateProcessor, PlateProcessor>();
 
         return services;
     }

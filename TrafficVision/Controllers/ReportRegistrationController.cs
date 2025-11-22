@@ -33,7 +33,7 @@ namespace TrafficVision.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateReportRegistrationCommand command)
+        public async Task<IActionResult> Create([FromForm] CreateReportRegistrationCommand command)
         {
             var result = await _mediator.Send(command);
 
