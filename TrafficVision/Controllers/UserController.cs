@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using TrafficVision.Application.Features.Commands;
 using TrafficVision.Domain.Entities;
 using TrafficVision.Domain.Interfaces.Repository;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace TrafficVision.Api.Controllers
 {
@@ -8,13 +11,11 @@ namespace TrafficVision.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IReadUserRepository _readRepository;
-        private readonly IWriteUserRepository _writeRepository;
+        private readonly IMediator _mediatr;
 
-        public UserController(IReadUserRepository readRepository, IWriteUserRepository writeRepository)
+        public UserController(IMediator mediatr)
         {
-            _readRepository = readRepository;
-            _writeRepository = writeRepository;
+            _mediatr = mediatr;
         }
 
         [HttpGet]
@@ -34,11 +35,14 @@ namespace TrafficVision.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateAsync([FromBody] User user)
+        public async Task<ActionResult> CreateAsync([FromBody] CreateUserCommand command)
         {
-            throw new NotImplementedException();
-            //await _writeRepository.AddAsync(user);
-            //return Ok();
+            var result = await _mediatr.Send(command);
+
+            if (!result.IsSuccess)
+                return BadRequest(result.ListMessageErrors);
+
+            return Ok(result.Content);
         }
 
         [HttpPut]

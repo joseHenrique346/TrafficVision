@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace TrafficVision.Application.Features.Commands.User.Create;
+namespace TrafficVision.Application.Features.Commands;
 
 internal class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
 {

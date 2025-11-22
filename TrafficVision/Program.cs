@@ -29,9 +29,9 @@ builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBeh
 
 // Simulação Detran com gRPC :P
 
-builder.Services.AddGrpcClient<VehicleService.VehicleServiceClient>(o =>
+builder.Services.AddGrpcClient<VehicleService.VehicleServiceClient>(options =>
 {
-    o.Address = new Uri("https://localhost:44392");
+    options.Address = new Uri("https://localhost:7022");
 });
 
 var app = builder.Build();

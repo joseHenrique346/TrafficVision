@@ -17,6 +17,7 @@ public sealed class User : BaseEntity
     public User(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword)
     {
         BaseValidate.NullOrWhiteSpace(name, nameof(User));
+        BaseValidate.Length(name, 110, nameof(User));
 
         Name = name;
         UserRole = userRole;
@@ -34,6 +35,7 @@ public sealed class User : BaseEntity
     public void Update(string name, EnumUserRole userRole, UserEmail userEmail, UserPassword userPassword)
     {
         BaseValidate.NullOrWhiteSpace(name, nameof(User));
+        BaseValidate.Length(name, 110, nameof(User));
 
         Name = name;
         UserRole = userRole;

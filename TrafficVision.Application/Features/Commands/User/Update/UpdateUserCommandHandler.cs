@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrafficVision.Application.Features.Commands.User.Update
+namespace TrafficVision.Application.Features.Commands
 {
     internal class UpdateUserCommandHandler
     {

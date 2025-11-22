@@ -9,7 +9,7 @@ public static class BaseValidate
         if (string.IsNullOrWhiteSpace(value)) { throw new ArgumentNullException(propertyName + " precisa ser preenchido(a)"); }
     }
 
-    public static void Length(string value, int maxLength, int? minLength, string propertyName)
+    public static void Length(string value, int maxLength, string propertyName, int? minLength = 0)
     {
         if (minLength == null) { minLength = 0; }
 

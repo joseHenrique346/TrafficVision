@@ -14,7 +14,7 @@ public sealed class UserPassword
     public UserPassword(string value)
     {
         BaseValidate.NullOrWhiteSpace(value, nameof(UserPassword));
-        BaseValidate.Length(value, 16, 8, nameof(UserPassword));
+        BaseValidate.Length(value, 16, nameof(UserPassword), 8);
 
         // Verifica se possue no mínimo uma maiúscula
         BaseValidate.RegexIsMatch(value, "^(?=.*[A-Z]).+$", nameof(UserPassword), " precisa conter pelo menos uma maiúscula");
@@ -41,7 +41,7 @@ public sealed class UserPassword
     public void Update(string value)
     {
         BaseValidate.NullOrWhiteSpace(value, nameof(UserPassword));
-        BaseValidate.Length(value, 16, 8, nameof(UserPassword));
+        BaseValidate.Length(value, 16, nameof(UserPassword), 8);
 
         // Verifica se possue no mínimo uma maiúscula
         BaseValidate.RegexIsMatch(value, "^(?=.*[A-Z]).+$", nameof(UserPassword), " precisa conter pelo menos uma maiúscula");

@@ -10,12 +10,14 @@ public sealed class CreateReportRegistrationCommandHandler : IRequestHandler<Cre
     private readonly IReportRegistrationService _service;
     private readonly IWriteReportRegistrationRepository _writeReportRegistratonRepository;
     private readonly IReadUserRepository _readUserRepository;
+    private readonly IWriteVehicleRepository _writeVehicleRepository;
 
-    public CreateReportRegistrationCommandHandler(IReportRegistrationService service, IWriteReportRegistrationRepository writeReportRegistratonRepository, IReadUserRepository readUserRepository)
+    public CreateReportRegistrationCommandHandler(IReportRegistrationService service, IWriteReportRegistrationRepository writeReportRegistratonRepository, IReadUserRepository readUserRepository, IWriteVehicleRepository writeVehicleRepository)
     {
         _service = service;
         _writeReportRegistratonRepository = writeReportRegistratonRepository;
         _readUserRepository = readUserRepository;
+        _writeVehicleRepository = writeVehicleRepository;
     }
 
     public async Task<Result<ReportRegistration>> Handle(CreateReportRegistrationCommand request, CancellationToken cancellationToken)
@@ -26,7 +28,7 @@ public sealed class CreateReportRegistrationCommandHandler : IRequestHandler<Cre
 
         if (user == null)
             result.Failure($"Usuário não encontrado, efetue o login corretamente");
-
+        
         var vehicleDTO = await _service.GetByPlateAsync(request.Plate, cancellationToken);
 
         if (vehicleDTO == null)
@@ -64,7 +66,9 @@ public sealed class CreateReportRegistrationCommandHandler : IRequestHandler<Cre
             vehicleDTO.Color,
             validatedVehicleSpec);
 
-        var createdReportRegistration = ReportRegistration.Create(user.Id, validatedVehicle.Id);
+        var createdVehicle = await _writeVehicleRepository.AddAsync(validatedVehicle);
+
+        var createdReportRegistration = ReportRegistration.Create(user.Id, createdVehicle.Id);
 
         await _writeReportRegistratonRepository.AddAsync(createdReportRegistration);
 

@@ -20,6 +20,8 @@ public static class DependencyInjection
         services.AddScoped<IWriteUserRepository, WriteUserRepository>();
         services.AddScoped<IReadUserRepository, ReadUserRepository>();
 
+        services.AddScoped<IWriteVehicleRepository, WriteVehicleRepository>();
+
         return services;
     }
 }

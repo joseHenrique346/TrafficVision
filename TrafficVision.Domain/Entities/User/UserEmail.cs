@@ -15,7 +15,7 @@ public sealed class UserEmail
     public UserEmail(string value)
     {
         BaseValidate.NullOrWhiteSpace(value, nameof(UserEmail));
-        BaseValidate.Length(value, 40, 6, nameof(UserEmail));
+        BaseValidate.Length(value, 40, nameof(UserEmail), 6);
 
         try
         {
@@ -42,7 +42,7 @@ public sealed class UserEmail
     public void Update(string value)
     {
         BaseValidate.NullOrWhiteSpace(value, nameof(UserEmail));
-        BaseValidate.Length(value, 40, 6, nameof(UserEmail));
+        BaseValidate.Length(value, 40, nameof(UserEmail), 6);
 
         try
         {

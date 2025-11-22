@@ -16,10 +16,11 @@ public class WriteBaseRepository<TEntity> : IWriteBaseRepository<TEntity>
         _dbSet = context.Set<TEntity>();
     }
 
-    public async Task AddAsync(TEntity entity)
+    public async Task<TEntity> AddAsync(TEntity entity)
     {
         await _dbSet.AddAsync(entity);
         await _context.SaveChangesAsync();
+        return entity;
     }
 
     public async Task DeleteAsync(long id)

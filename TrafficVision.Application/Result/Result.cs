@@ -2,7 +2,7 @@
 
 public sealed class Result<TContent>
 {
-    public bool IsSuccess { get; private set; }
+    public bool IsSuccess { get; private set; } = true;
     public TContent Content { get; private set; }
     public List<string> ListMessageErrors { get; private set; } = [];
 
