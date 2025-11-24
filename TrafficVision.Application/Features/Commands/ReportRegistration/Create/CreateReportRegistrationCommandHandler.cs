@@ -34,15 +34,11 @@ public sealed class CreateReportRegistrationCommandHandler : IRequestHandler<Cre
             finalPlate = await _plateProcessor.RecognizePlateAsync(request.File);
 
             if (string.IsNullOrEmpty(finalPlate))
-            {
                 return result.ExternalError("Não foi possível identificar nenhuma placa na imagem enviada.");
-            }
         }
 
         if (string.IsNullOrWhiteSpace(finalPlate))
-        {
             return result.ExternalError("A placa é obrigatória (informe o texto ou envie uma imagem legível).");
-        }
 
         finalPlate = finalPlate.ToUpper().Trim().Replace("-", "");
 

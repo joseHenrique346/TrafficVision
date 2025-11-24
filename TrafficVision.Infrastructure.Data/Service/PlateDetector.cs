@@ -22,9 +22,9 @@ public static class PlateDetector
         var element = Cv2.GetStructuringElement(MorphShapes.Rect, new Size(3, 3)); // engrossa as bordas para fechar retângulos falhados
         Cv2.Dilate(edged, dilated, element);
 
-        // caso queira debugar
-        //var debugPath = Path.Combine(AppContext.BaseDirectory, "debug_01_edged.png");
-        //Cv2.ImWrite(debugPath, dilated);
+        //caso queira debugar
+        var debugPath = Path.Combine(AppContext.BaseDirectory, "debug_01_edged.png");
+        Cv2.ImWrite(debugPath, dilated);
 
         Cv2.FindContours(dilated, out Point[][] contours, out _, RetrievalModes.Tree, ContourApproximationModes.ApproxSimple);
 

@@ -33,7 +33,7 @@ public class PlateProcessor : IPlateProcessor
             using var plateBody = CropHeader(plateFull); // corta cabeçalho
 
             // caso queira debugar
-            //Cv2.ImWrite(Path.Combine(AppContext.BaseDirectory, "debug_02_body.png"), plateBody);
+            Cv2.ImWrite(Path.Combine(AppContext.BaseDirectory, "debug_02_body.png"), plateBody);
 
             string rawText = PerformOcr(plateBody);
 

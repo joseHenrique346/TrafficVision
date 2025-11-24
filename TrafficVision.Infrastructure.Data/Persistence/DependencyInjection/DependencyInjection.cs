@@ -16,6 +16,7 @@ public static class DependencyInjection
 
         services.AddScoped<IWriteReportRegistrationRepository, WriteReportRegistrationRepository>();
         services.AddScoped<IReadReportRegistrationRepository, ReadReportRegistrationRepository>();
+        services.AddScoped<IDynamicReportQueryRepository, DynamicReportQueryRepository>();
 
         services.AddScoped<IWriteUserRepository, WriteUserRepository>();
         services.AddScoped<IReadUserRepository, ReadUserRepository>();

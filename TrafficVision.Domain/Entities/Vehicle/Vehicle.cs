@@ -18,7 +18,6 @@ public sealed class Vehicle : BaseEntity
     public Vehicle(string model, int year, string brand, string color, VehicleSpec vehicleSpec)
     {
         BaseValidate.NullOrWhiteSpace(year.ToString(), $"{Year}");
-        BaseValidate.AnnualPeriod(year);
         BaseValidate.NullOrWhiteSpace(model, $"{Model}");
         BaseValidate.NullOrWhiteSpace(brand, $"{Brand}");
         BaseValidate.NullOrWhiteSpace(color, $"{Color}");
@@ -41,7 +40,6 @@ public sealed class Vehicle : BaseEntity
     public void Update(string model, int year, string brand, string color, VehicleSpec vehicleSpec)
     {
         BaseValidate.NullOrWhiteSpace(year.ToString(), $"{Year}");
-        BaseValidate.AnnualPeriod(year);
         BaseValidate.NullOrWhiteSpace(model, $"{Model}");
         BaseValidate.NullOrWhiteSpace(brand, $"{Brand}");
         BaseValidate.NullOrWhiteSpace(color, $"{Color}");

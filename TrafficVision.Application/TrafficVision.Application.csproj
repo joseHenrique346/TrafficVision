@@ -16,4 +16,8 @@
 		<ProjectReference Include="..\TrafficVision.Domain\TrafficVision.Domain.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Features\Commands\DynamicReport\Update\" />
+	</ItemGroup>
+
 </Project>

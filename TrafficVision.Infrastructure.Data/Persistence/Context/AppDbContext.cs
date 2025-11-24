@@ -13,6 +13,8 @@ public class AppDbContext : DbContext
 
     public DbSet<ReportRegistration> ReportRegistration { get; set; }
     public DbSet<User> User { get; set; }
+    public DbSet<Vehicle> Vehicle { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

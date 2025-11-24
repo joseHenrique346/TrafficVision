@@ -9,6 +9,14 @@ public static class BaseValidate
         if (string.IsNullOrWhiteSpace(value)) { throw new ArgumentNullException(propertyName + " precisa ser preenchido(a)"); }
     }
 
+    public static void ListNullOrWhiteSpace(List<string> listValue)
+    {
+        foreach (var value in listValue)
+        {
+            NullOrWhiteSpace(value, nameof(value));
+        }
+    }
+
     public static void Length(string value, int maxLength, string propertyName, int? minLength = 0)
     {
         if (minLength == null) { minLength = 0; }
@@ -21,8 +29,26 @@ public static class BaseValidate
         if (!Regex.IsMatch(value, regex)) { throw new ArgumentException(message, propertyName); }
     }
 
-    public static void AnnualPeriod(int year, int? minimunPeriodYear = null, bool allowFutureYears = false)
+    public static void DateRange(DateTime initialDate, DateTime? finalDate)
     {
-        
+        if (initialDate == null)
+            throw new ArgumentException($"A data inicial precisa ser informada");
+            
+        var today = DateTime.Today;
+
+        if (initialDate.Date > today)
+            throw new ArgumentException($"{initialDate.Date} não pode ser maior que a data atual.");
+
+        if (finalDate.HasValue)
+        {
+            var endDate = finalDate.Value.Date;
+
+            if (endDate > today)
+                throw new ArgumentException($"{finalDate.Value.Date} não pode ser maior que a data atual.");
+
+            if (endDate < initialDate.Date)
+                throw new ArgumentException($"{finalDate.Value.Date} não pode ser anterior à {initialDate.Date}.");
+        }
     }
+
 }
