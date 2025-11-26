@@ -2,5 +2,5 @@
 {
     Roubado = 1,
     Furtado = 2,
-    None = 3
+    Nenhum = 3
 }

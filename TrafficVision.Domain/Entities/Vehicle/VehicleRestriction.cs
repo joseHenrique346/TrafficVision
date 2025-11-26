@@ -14,7 +14,7 @@ public sealed class VehicleRestriction
 
     public VehicleRestriction(EnumTheftVehicleCondition theftVehicleCondition, bool wrecked, bool judicialRestriction, bool auction)
     {
-        EnumTheftVehicleCondition validatedTheftVehicleCondition = theftVehicleCondition != null ? theftVehicleCondition : EnumTheftVehicleCondition.None;
+        EnumTheftVehicleCondition validatedTheftVehicleCondition = theftVehicleCondition != null ? theftVehicleCondition : EnumTheftVehicleCondition.Nenhum;
         bool validatedWrecked = wrecked != null ? wrecked : false;
         bool validatedJudicialRestriction = judicialRestriction != null ? judicialRestriction : false;
         bool validatedAuction = auction != null ? auction : false;
@@ -35,7 +35,7 @@ public sealed class VehicleRestriction
 
     public void Update(EnumTheftVehicleCondition enumTheftVehicleCondition, bool wrecked, bool judicialRestriction, bool auction)
     {
-        EnumTheftVehicleCondition validatedTheftVehicleCondition = enumTheftVehicleCondition != null ? enumTheftVehicleCondition : EnumTheftVehicleCondition.None;
+        EnumTheftVehicleCondition validatedTheftVehicleCondition = enumTheftVehicleCondition != null ? enumTheftVehicleCondition : EnumTheftVehicleCondition.Nenhum;
         bool validatedWrecked = wrecked != null ? wrecked : false;
         bool validatedJudicialRestriction = judicialRestriction != null ? judicialRestriction : false;
         bool validatedAuction = auction != null ? auction : false;
