@@ -25,19 +25,19 @@ public class DynamicReportQueryRepository : IDynamicReportQueryRepository
             query = query.Where(x => x.CreatedAt <= filter.FinalDate);
 
         if (filter.ListColor.Any())
-            query = query.Where(x => filter.ListColor.Contains(x.Color));
+            query = query.Where(x => filter.ListColor.Contains(x.Color.ToLower()));
 
         if (filter.ListModel.Any())
-            query = query.Where(x => filter.ListModel.Contains(x.Model));
+            query = query.Where(x => filter.ListModel.Contains(x.Model.ToLower()));
 
         if (filter.ListBrand.Any())
-            query = query.Where(x => filter.ListBrand.Contains(x.Brand));
+            query = query.Where(x => filter.ListBrand.Contains(x.Brand.ToLower()));
 
         if (filter.ListMunicipality.Any())
-            query = query.Where(x => filter.ListMunicipality.Contains(x.VehicleSpec.Municipality));
+            query = query.Where(x => filter.ListMunicipality.Contains(x.VehicleSpec.Municipality.ToLower()));
 
         if (filter.ListState.Any())
-            query = query.Where(x => filter.ListState.Contains(x.VehicleSpec.State));
+            query = query.Where(x => filter.ListState.Contains(x.VehicleSpec.State.ToLower()));
 
         if (filter.Wrecked)
             query = query.Where(x => x.VehicleSpec.VehicleRestriction.Wrecked);

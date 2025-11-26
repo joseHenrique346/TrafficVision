@@ -102,17 +102,11 @@ public class PlateProcessor : IPlateProcessor
 
         char[] chars = clean.ToCharArray();
 
-        // Pos 0, 1, 2 -> SEMPRE LETRAS
-        // Pos 3       -> SEMPRE NÚMERO
-        // Pos 4       -> LETRA (Mercosul) ou NÚMERO (Antiga)
-        // Pos 5, 6    -> SEMPRE NÚMEROS
-
         for (int i = 0; i < 3; i++)
         {
             chars[i] = FixLetter(chars[i]);
         }
 
-        // --- CORRIGINDO A 4ª (NÚMERO) ---
         chars[3] = FixNumber(chars[3]);
 
         chars[5] = FixNumber(chars[5]);
