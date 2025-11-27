@@ -61,7 +61,7 @@ Este projeto consome dados via gRPC de um serviço externo. Você deve clonar e 
 Clone o repositório:
 
 ``` bash
-git clone [https://github.com/joseHenrique346/TrafficVision.git](https://github.com/joseHenrique346/TrafficVision.git)
+git clone https://github.com/joseHenrique346/TrafficVision.git
 cd TrafficVision
 ```
 
