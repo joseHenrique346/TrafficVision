@@ -83,22 +83,21 @@ dotnet run --project src/TrafficVision.Api
 ```
 
 # Funcionalidades do MVP
-[x] Upload de Imagem: Recebimento de imagens de veículos via API REST.
 
-[x] OCR (Leitura de Placa): Processamento da imagem para extração de texto da placa.
-
-[x] Consulta Externa (gRPC): Envio da placa extraída para o microsserviço externo para buscar dados do proprietário e situação do veículo.
-
-[x] Geração de Relatório: Criação dinâmica de um arquivo PDF com os dados extraídos e a validação legal.
+- [x] Upload de Imagem: Recebimento de imagens de veículos via API REST.
+- [x] OCR (Leitura de Placa): Processamento da imagem para extração de texto da placa.
+- [x] Consulta Externa (gRPC): Envio da placa extraída para o microsserviço externo para buscar dados do proprietário e situação do veículo.
+- [x] Geração de Relatório: Criação dinâmica de um arquivo PDF com os dados extraídos e a validação legal.
 
 # Roadmap e Melhorias Futuras
-Como este é um MVP focado na validação da arquitetura distribuída, algumas funcionalidades estão no backlog para a versão 2.0:
-- Autenticação/Autorização: Implementação de JWT.
-- Refinamento do OCR: Adicionar uma camada de Computer Vision para detectar e recortar a placa automaticamente antes de passar para o OCR (atualmente espera imagens focadas).
-- Filas: Implementar RabbitMQ para processamento assíncrono de imagens pesadas.
+Este MVP foca na validação da arquitetura distribuída. Próximos passos (v2.0):
+
+- [ ] Segurança: Implementação de JWT e OAuth2.
+- [ ] Computer Vision: Pré-processamento com OpenCV para detecção automática da área da placa.
+- [ ] Assincronismo: Implementação de RabbitMQ para processamento de filas de imagens pesadas.
 
 # 👨‍💻 Autor
 ### José Henrique Fernandes Desenvolvedor Backend .NET | Focado em Arquitetura de Software e Soluções Corporativas.
 - [Linkedin](https://www.linkedin.com/in/jos%C3%A9fernandes346/)
 
-### Projeto desenvolvido como conclusão de 4º termo, validado por especialistas de gestão de tráfego.
+### Projeto Capstone desenvolvido durante o 4º termo de ADS, focado em resolver problemas reais de latência e integração em sistemas distribuídos, validado por especialistas de gestão de tráfego.
