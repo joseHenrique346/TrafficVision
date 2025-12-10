@@ -16,6 +16,8 @@ namespace TrafficVision.Api.Controllers
             _mediator = mediator;
         }
 
+        // Ainda há de ser implementado
+
         [HttpGet]
         public async Task<ActionResult<List<ReportRegistration>>> GetAllAsync()
         {
@@ -23,6 +25,8 @@ namespace TrafficVision.Api.Controllers
             //var list = await _readRepository.GetAll();
             //return Ok(list);
         }
+
+        // Ainda há de ser implementado
 
         [HttpGet("{id}")]
         public async Task<ActionResult<ReportRegistration>> GetByIdAsync(long id)
@@ -43,6 +47,8 @@ namespace TrafficVision.Api.Controllers
             return Ok(result.Content);
         }
 
+        // Ainda há de ser implementado
+
         [HttpPut]
         public async Task<ActionResult> UpdateAsync([FromBody] ReportRegistration entity)
         {
@@ -50,6 +56,8 @@ namespace TrafficVision.Api.Controllers
             //await _writeRepository.UpdateAsync(entity);
             //return Ok();
         }
+
+        // Ainda há de ser implementado
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteAsync(long id)

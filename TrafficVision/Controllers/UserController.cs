@@ -18,6 +18,8 @@ namespace TrafficVision.Api.Controllers
             _mediatr = mediatr;
         }
 
+        // Ainda há de ser implementado
+
         [HttpGet]
         public async Task<ActionResult<List<User>>> GetAllAsync()
         {
@@ -25,6 +27,8 @@ namespace TrafficVision.Api.Controllers
             //var users = await _readRepository.GetAll();
             //return Ok(users);
         }
+
+        // Ainda há de ser implementado
 
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetByIdAsync(long id)
@@ -45,6 +49,8 @@ namespace TrafficVision.Api.Controllers
             return Ok(result.Content);
         }
 
+        // Ainda há de ser implementado
+
         [HttpPut]
         public async Task<ActionResult> UpdateAsync([FromBody] User user)
         {
@@ -52,6 +58,8 @@ namespace TrafficVision.Api.Controllers
             //await _writeRepository.UpdateAsync(user);
             //return Ok();
         }
+
+        // Ainda há de ser implementado
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteAsync(long id)
